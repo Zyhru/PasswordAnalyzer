@@ -30,16 +30,17 @@ def get_content():
         Label(text="Strong").place(x=70,y=30)
 
    
-
+# selects a random character to add to random password
 def random_character(a):
 
     character_list = list(a)
-    # random.randrange(len(character_list))
+    
     random_char = character_list[random.randrange(len(character_list))]
 
     return random_char
 
 
+# generates random password specified by user length
 def generate_password():
     
     
@@ -76,13 +77,13 @@ def generate_password():
     
     return test
 
-
+# Adds generated password to text field
 def password_generated():
     gen_e.delete(0,END)
     new_pass = generate_password()
     gen_e.insert(10,new_pass)
 
-
+# Allows users to copy password to clipboard
 def copy_password():
     pyperclip.copy(gen_e.get())
     
@@ -92,7 +93,7 @@ def copy_password():
 win = Tk()
 win.geometry("500x200")
 
-
+#photo of shrek
 img = PhotoImage(file='shrek.png')
 Label(
     win,
